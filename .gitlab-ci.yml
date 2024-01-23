@@ -1,0 +1,23 @@
+stages:
+  - checkout
+  - build
+
+variables:
+  MAVEN_HOME: '/usr/share/maven'
+  MAVEN_OPTS: '-Dmaven.repo.local=.m2/repository'
+  JDK_HOME: '/usr/lib/jvm/java-11-openjdk-amd64'
+
+before_script:
+  - export PATH="$MAVEN_HOME/bin:$JDK_HOME/bin:$PATH"
+  - mvn --version
+
+checkout:
+  stage: checkout
+  script:
+    - git clone --branch master https://github.com/sbeliakou/java-hello-world-with-maven.git
+
+build:
+  stage: build
+  script:
+    - cd java-hello-world-with-maven
+    - mvn package
