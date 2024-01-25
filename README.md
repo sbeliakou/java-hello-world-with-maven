@@ -73,7 +73,7 @@ Now that you have a project that is ready to be built with Maven, the next step 
     <groupId>org.springframework</groupId>
     <artifactId>jb-hello-world-maven</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 
     <build>
         <plugins>
@@ -121,7 +121,7 @@ To try out the build, issue the following at the command line:
 
 `mvn package`
 
-  + The package goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the target directory. The name of the JAR file will be based on the project’s `<artifactId>` and `<version>`. For example, given the minimal `pom.xml` file from before, the JAR file will be named gs-maven-0.1.0.jar.
+  + The package goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the target directory. The name of the JAR file will be based on the project’s `<artifactId>` and `<version>`. For example, given the minimal `pom.xml` file from before, the JAR file will be named gs-maven-0.2.0.jar.
 
     **Note:**  If you’ve changed the value of <packaging> from "jar" to "war", the result will be a WAR file within the target directory instead of a JAR file.
 
@@ -201,7 +201,7 @@ Here’s the completed `pom.xml` file:
     <groupId>org.springframework</groupId>
     <artifactId>hello-world-maven</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 
     <!-- tag::joda[] -->
     <properties>
@@ -249,4 +249,10 @@ Here’s the completed `pom.xml` file:
 ---
 + To run this project run the following command.
 
-    `java -cp target/jb-hello-world-maven-0.1.0.jar hello.HelloWorld`
+```bash
+java -cp target/jb-hello-world-maven-0.2.0.jar hello.HelloWorld
+
+# or:
+java -jar target/jb-hello-world-maven-0.2.0.jar
+```
+
